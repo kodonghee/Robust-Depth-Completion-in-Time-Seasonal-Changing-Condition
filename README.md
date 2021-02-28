@@ -3,7 +3,8 @@
   As a result, we found that the accuracy of depth completion increased from about 77% to 80%. 
 
 # Motivation
-Considering that the subject data were taken during the day and that the depth completion study would be applied in areas such as autonomous driving in the future, we thought that the depth information should be robustly estimated in other weather environments.
+* Studies currently underway have set clear indoor or day outdoor images as datasets and conducted experiments.
+* It is difficult to estimate depth information of image in Rain-Night environment.
 
 # Model
 
