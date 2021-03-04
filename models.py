@@ -11,8 +11,6 @@ from PIL import Image
 from glob import glob
 from torchvision import transforms
 import net
-# from function import adaptive_instance_normalization as adain
-# from function import calc_mean_std
 
 
 
@@ -338,7 +336,7 @@ class ResNet(nn.Module):
 
         content_f = x
         style_transfer = self.adaptive_instance_normalization(content_f)
-        # style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
+        style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
         concat = torch.cat([content_f, style_transfer], dim=1)
 
         x = self.conv6(concat)
@@ -349,7 +347,7 @@ class ResNet(nn.Module):
 
         content_f = x
         style_transfer = self.adaptive_instance_normalization(content_f)
-        # style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
+        style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
         concat = torch.cat([content_f, style_transfer], dim=1)
 
         x = self.conv2(concat)
@@ -359,7 +357,7 @@ class ResNet(nn.Module):
 
         content_f = x
         style_transfer = self.adaptive_instance_normalization(content_f)
-        # style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
+        style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
         concat = torch.cat([content_f, style_transfer], dim=1)
 
         x = self.conv4(concat)
@@ -382,7 +380,7 @@ class ResNet(nn.Module):
 
         content_f = x
         style_transfer = self.adaptive_instance_normalization(content_f)
-        # style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
+        style_transfer = self.alpha * style_transfer + (1 - self.alpha) * content_f
         concat = torch.cat([content_f, style_transfer], dim=1)
 
         x = self.conv5(concat)
