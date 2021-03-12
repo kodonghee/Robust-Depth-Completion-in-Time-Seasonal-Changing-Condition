@@ -8,7 +8,7 @@
 
 # Model
 ![models](https://user-images.githubusercontent.com/78299113/109423781-2601de00-7a24-11eb-9402-f60065144113.png)
-**Figure 1.** 개선된 네트워크 모델. Adaptive Instance Normalization (AdaIN) layer 4개가 baseline model에 삽입되었습니다.
+**Figure 1.** 개선된 네트워크 모델. Adaptive Instance Normalization (AdaIN) layer 4개가 baseline model에 삽입된 구조.
 
 # Result
 ### Network Evaluation
