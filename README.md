@@ -1,33 +1,34 @@
-# Robust-Depth-Completion-in-Time-Seasonal-Changing-Condition
-  * The Adaptive Instance Normalization (AdaIN) used for Style Transfer has been applied to the existing depth completion model so that depth information can be strongly estimated in a rain-night environment. 
-  * As a result, we found that the accuracy of depth completion increased from about 77% to 80%. 
+# Robust-Depth-Completion-in-Time-Seasonal-Changing-Condition 
+  * Style Transfer에 사용되는 Adaptive Instance Normalization (AdaIN) 을 기존 깊이 추정 모델에 적용하여 비 오는 밤 환경에서도 깊이 정보가 강인하게 추정되도록 했습니다.
+  * 결과적으로, 깊이 정보 추정 정확도를 77%에서 80%로 높였습니다.
 
 # Motivation
-* Studies currently underway have set clear indoor or day outdoor images as datasets and conducted experiments.
-* It is difficult to estimate depth information of image in Rain-Night environment.
+* 현재 진행되고 있는 연구들은 밝은 실내 이미지 또는 낮 야외 이미지를 대상으로 합니다.
+* 비 오는 밤 환경에서 이미지의 깊이 정보를 추정하는 일은 어렵습니다.
 
 # Model
 ![models](https://user-images.githubusercontent.com/78299113/109423781-2601de00-7a24-11eb-9402-f60065144113.png)
-**Figure 1.** Our network model. 4 layers of Adaptive Instance Normalization (AdaIN) are inserted in baseline model.
+**Figure 1.** 개선된 네트워크 모델. Adaptive Instance Normalization (AdaIN) layer 4개가 baseline model에 삽입되었습니다.
 
 # Result
 ### Network Evaluation
 
-**Table 1.** The results comparison on the RAINNIGHT dataset according to the number of Adaptive Instance Normalization (AdaIN) layer and whether a parameter α in Adaptive Instance Normalization (AdaIN) part was set to learnable parameter. Baseline is the model of [1]. Ours #1 and Ours #2 are our model.
+**Table 1.** 다음 표는 Adaptive Instance Normalization (AdaIN) layer의 개수와 parameter α가 learnable parameter로 설정되었는지의 여부에 따른 결과입니다. Baseline model은 논문 [1]의  model입니다. Ours #1 와 Ours #2는 이번 프로젝트를 통해 만들어진 모델입니다.
 ![table 1](https://user-images.githubusercontent.com/78299113/109424461-0a4c0700-7a27-11eb-9b50-8d9b87223338.png)
 
 ![figure 2](https://user-images.githubusercontent.com/78299113/109424493-2b145c80-7a27-11eb-8b8e-2b09a42f361f.png)
-**Figure 2.** Results for Ours #2. From the left are RGB image, sparse depth sample, ground truth, model prediction. The above is the result of the test with Virtual KITTI 2 daytime datasets, and the below is the result of the test with SYNTHIA RAINNIGHT datasets.
+**Figure 2.** Ours #2의 결과입니다. 왼쪽부터 RGB image, sparse depth sample, ground truth, model prediction입니다. 위쪽은 Virtual KITTI 2 daytime datasets으로 실험한 결과이고 아래쪽은 SYNTHIA RAINNIGHT datasets으로 실험한 결과입니다.
 
 ### Comparison with the Baseline
 
-**Table 2.** The comparison of the baseline [1] model and our model on the three image datasets when testing. Performance was similarly high for the Day dataset, and performance of our model was slightly higher for Winter and Rain Night datasets.
+**Table 2.** 세 종류의 이미지 데이터셋에 대한 baseline model [1]과 개선된 모델의 실험 결과입니다. Day dataset에 대해서는 두 모델의 성능이 비슷한 정도로 높지만 RAINNIGHT dataset과 WINTER dataset에 대해서는 개선된 모델의 성능이 더 높습니다.
 ![table 2](https://user-images.githubusercontent.com/78299113/109424611-a118c380-7a27-11eb-9b06-b3df0c58af8c.png)
 
 ![figure 3](https://user-images.githubusercontent.com/78299113/109424623-ab3ac200-7a27-11eb-8251-8c07434bcbf6.png)
-**Figure 3.** The comparison of the test results of baseline [1] model (above) and our model (below) on the RAINNIGHT datasets. It can be seen that the image below predicted the depth information better in the lower right part.
+**Figure 3.** RAINNIGHT datasets에 대한 baseline model [1] (위쪽)과 개선된 모델 (아래쪽)의 실험 결과입니다. 이미지의 오른쪽 아랫 부분을 보면 개선된 모델 (아래쪽)의 실험 결과가 깊이 정보를 더 잘 예측한 것을 볼 수 있습니다.
 
 ### Result video
+링크를 통해 결과 영상을 볼 수 있습니다.
 https://www.youtube.com/watch?v=GUoZR_Q06Vg&feature=youtu.be
 
 # Reference
